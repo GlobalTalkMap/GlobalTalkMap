@@ -1,74 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Global Talk Map</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <div class="content">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Talk Map</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
       <h1>How many people can you talk to?</h1>
-      <p>Pick the languages you speak and see a quick, approximate view of how much of the world you could chat with. Totals are based on public statistics and intentionally overestimate reach because many people speak multiple languages.</p>
-    </div>
-  </header>
+      <p>
+        Pick the languages you speak and see how much of the world you could
+        potentially reach. Data combines native (L1) and second-language (L2)
+        speakers, so overlaps between multilingual speakers are not removed.
+      </p>
+    </header>
 
-  <main class="layout">
-    <section class="panel language-panel">
-      <div class="panel-header">
-        <h2>Languages</h2>
-        <p>Select one or more languages you speak fluently.</p>
-      </div>
-      <p class="hint">Check or uncheck languages below. The visuals update instantly—no need to press Enter.</p>
-      <label class="sr-only" for="languageSearch">Search languages</label>
-      <input id="languageSearch" type="text" placeholder="Search languages" autocomplete="off">
-      <div class="selector-actions">
-        <button id="selectAll" type="button">Select all</button>
-        <button id="clearSelection" type="button" class="secondary">Clear</button>
-      </div>
-      <div id="languageList" class="language-list" aria-live="polite">
-        <p class="empty-state">Loading languages…</p>
-      </div>
-    </section>
+    <main>
+      <section class="panel selector-panel">
+        <h2>Select your languages</h2>
+        <label class="visually-hidden" for="languageSearch">Search languages</label>
+        <input
+          type="search"
+          id="languageSearch"
+          placeholder="Search languages..."
+          autocomplete="off"
+        />
+        <label class="visually-hidden" for="languageSelect">Choose languages</label>
+        <select id="languageSelect" multiple></select>
+        <p class="hint">
+          Tip: Use Ctrl/Cmd + click (desktop) or tap options to select multiple
+          languages. The list is filterable via the search box.
+        </p>
+      </section>
 
-    <section class="panel map-panel">
-      <div class="panel-header">
-        <h2>World map</h2>
-        <p>Highlighted countries have substantial native speakers of at least one selected language.</p>
-      </div>
-      <div id="map" role="img" aria-label="Simplified world map"></div>
-      <p class="legend">Hover over a country to see which of your selected languages are common there.</p>
-    </section>
+      <section class="panel map-panel">
+        <div class="panel-heading">
+          <h2>World coverage</h2>
+          <p class="legend">
+            Highlighted countries have substantial communities speaking at least
+            one selected language.
+          </p>
+        </div>
+        <div id="map" aria-live="polite"></div>
+      </section>
 
-    <section class="panel insights-panel">
-      <div class="panel-header">
-        <h2>Population insights</h2>
-        <p>Breakdown of total (L1 + L2) speakers for the languages you picked.</p>
-      </div>
-      <div class="chart-wrapper">
-        <canvas id="populationChart" aria-label="Pie chart showing speaker distribution"></canvas>
-        <div id="chartPlaceholder" class="chart-placeholder">Pick at least one language to see the chart.</div>
-      </div>
-      <div id="summary" class="summary" aria-live="polite"></div>
-      <p class="note">Numbers come from publicly available sources (mainly Wikipedia) and are rounded. "People you can talk to" simply sums language populations, so bilingual people are counted more than once.</p>
-    </section>
-  </main>
+      <section class="panel insights-panel">
+        <div class="chart-container">
+          <h2>Language share</h2>
+          <canvas id="populationChart" width="400" height="400"></canvas>
+          <p class="chart-placeholder" id="chartPlaceholder">
+            Select a language to see its share of your audience.
+          </p>
+        </div>
+        <div class="summary" id="summary">
+          <h2>Approximate reach</h2>
+          <p class="total" id="totalPeople">0.00B people</p>
+          <p class="percent" id="percentPeople">0% of world population</p>
+          <p class="disclaimer">
+            This visualization naively sums L1 + L2 speaker counts across
+            languages. Many people are bilingual or multilingual, so the total
+            can be an overestimate. All values are approximate and sourced from
+            public statistics for educational use only.
+          </p>
+        </div>
+      </section>
+    </main>
 
-  <footer>
-    <div class="content">
-      <p>Built as a lightweight static visualization. Data sources: Wikipedia lists of languages by total speakers and official languages by country.</p>
-    </div>
-  </footer>
+    <footer>
+      Data references: Wikipedia estimates for total speakers per language and
+      official language lists. Country shapes from Natural Earth via D3.
+    </footer>
 
-  <noscript>
-    <p class="noscript">This experience needs JavaScript enabled to load the interactive map and chart.</p>
-  </noscript>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-cVU+bBZ5qTqL0U8nyCLlcsoFV3ayhtq/Y5cHIzoHmr18bODsPwhj/KgOMGNJUgIVbawn94Qh1g0K1TKoPY1xhw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha256-IbexdFv+DE5jBqFaUG2RglN+E466+vWXTjhBMWrMOLs=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

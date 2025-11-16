@@ -4,373 +4,174 @@
     "iso_code": "en",
     "total_speakers_millions": 1528,
     "percent_world_population": 18.8,
-    "countries_iso2": [
-      "US",
-      "GB",
-      "CA",
-      "AU",
-      "NZ",
-      "IE",
-      "ZA",
-      "NG",
-      "KE",
-      "UG",
-      "GH",
-      "TZ",
-      "ZM",
-      "ZW",
-      "BW",
-      "NA",
-      "LR",
-      "SL",
-      "PH",
-      "IN"
-    ]
+    "countries_iso2": ["US", "GB", "CA", "AU", "NZ", "IE", "ZA", "NG", "IN"]
   },
   {
     "name": "Mandarin Chinese",
     "iso_code": "zh",
     "total_speakers_millions": 1184,
     "percent_world_population": 13.8,
-    "countries_iso2": [
-      "CN",
-      "TW",
-      "SG",
-      "MY"
-    ]
+    "countries_iso2": ["CN", "TW", "SG", "MY"]
   },
   {
     "name": "Hindi",
     "iso_code": "hi",
     "total_speakers_millions": 602,
     "percent_world_population": 7.4,
-    "countries_iso2": [
-      "IN",
-      "FJ",
-      "MU",
-      "SG"
-    ]
+    "countries_iso2": ["IN", "FJ", "NP"]
   },
   {
     "name": "Spanish",
     "iso_code": "es",
-    "total_speakers_millions": 559,
-    "percent_world_population": 6.5,
-    "countries_iso2": [
-      "ES",
-      "MX",
-      "AR",
-      "CO",
-      "PE",
-      "VE",
-      "CL",
-      "EC",
-      "GT",
-      "CU",
-      "DO",
-      "HN",
-      "NI",
-      "SV",
-      "CR",
-      "PA",
-      "BO",
-      "PY",
-      "UY",
-      "PR"
-    ]
+    "total_speakers_millions": 548,
+    "percent_world_population": 6.7,
+    "countries_iso2": ["ES", "MX", "AR", "CO", "CL", "PE"]
   },
   {
     "name": "French",
     "iso_code": "fr",
-    "total_speakers_millions": 309,
-    "percent_world_population": 3.8,
-    "countries_iso2": [
-      "FR",
-      "BE",
-      "CH",
-      "CA",
-      "CD",
-      "CI",
-      "CM",
-      "SN",
-      "ML",
-      "BF",
-      "NE",
-      "GN",
-      "BJ",
-      "TG",
-      "CF",
-      "CG",
-      "GA",
-      "TD",
-      "HT",
-      "MG",
-      "RW",
-      "BI"
-    ]
+    "total_speakers_millions": 274,
+    "percent_world_population": 3.3,
+    "countries_iso2": ["FR", "BE", "CA", "SN", "CI", "CM", "CD"]
   },
   {
-    "name": "Modern Standard Arabic",
+    "name": "Arabic",
     "iso_code": "ar",
     "total_speakers_millions": 372,
     "percent_world_population": 4.6,
-    "countries_iso2": [
-      "SA",
-      "AE",
-      "QA",
-      "KW",
-      "OM",
-      "BH",
-      "JO",
-      "LB",
-      "SY",
-      "IQ",
-      "YE",
-      "EG",
-      "SD",
-      "LY",
-      "TN",
-      "DZ",
-      "MA",
-      "PS"
-    ]
+    "countries_iso2": ["SA", "EG", "IQ", "DZ", "MA", "AE"]
   },
   {
     "name": "Bengali",
     "iso_code": "bn",
     "total_speakers_millions": 273,
     "percent_world_population": 3.4,
-    "countries_iso2": [
-      "BD",
-      "IN"
-    ]
+    "countries_iso2": ["BD", "IN"]
   },
   {
     "name": "Portuguese",
     "iso_code": "pt",
-    "total_speakers_millions": 263,
+    "total_speakers_millions": 264,
     "percent_world_population": 3.2,
-    "countries_iso2": [
-      "PT",
-      "BR",
-      "AO",
-      "MZ",
-      "GW",
-      "GQ",
-      "ST",
-      "TL",
-      "CV"
-    ]
+    "countries_iso2": ["PT", "BR", "AO", "MZ"]
   },
   {
     "name": "Russian",
     "iso_code": "ru",
-    "total_speakers_millions": 255,
-    "percent_world_population": 3.1,
-    "countries_iso2": [
-      "RU",
-      "BY",
-      "KZ",
-      "KG",
-      "MD"
-    ]
+    "total_speakers_millions": 258,
+    "percent_world_population": 3.2,
+    "countries_iso2": ["RU", "BY", "KZ", "UA"]
   },
   {
     "name": "Urdu",
     "iso_code": "ur",
     "total_speakers_millions": 231,
     "percent_world_population": 2.8,
-    "countries_iso2": [
-      "PK",
-      "IN"
-    ]
+    "countries_iso2": ["PK", "IN", "GB"]
   },
   {
     "name": "Indonesian",
     "iso_code": "id",
     "total_speakers_millions": 199,
-    "percent_world_population": 2.4,
-    "countries_iso2": [
-      "ID",
-      "TL"
-    ]
+    "percent_world_population": 2.5,
+    "countries_iso2": ["ID", "MY", "SG"]
   },
   {
     "name": "German",
     "iso_code": "de",
-    "total_speakers_millions": 134,
-    "percent_world_population": 1.6,
-    "countries_iso2": [
-      "DE",
-      "AT",
-      "CH",
-      "BE",
-      "LU",
-      "LI"
-    ]
+    "total_speakers_millions": 135,
+    "percent_world_population": 1.7,
+    "countries_iso2": ["DE", "AT", "CH"]
   },
   {
     "name": "Japanese",
     "iso_code": "ja",
-    "total_speakers_millions": 125,
+    "total_speakers_millions": 123,
     "percent_world_population": 1.5,
-    "countries_iso2": [
-      "JP"
-    ]
+    "countries_iso2": ["JP"]
   },
   {
     "name": "Swahili",
     "iso_code": "sw",
     "total_speakers_millions": 98,
     "percent_world_population": 1.2,
-    "countries_iso2": [
-      "TZ",
-      "KE",
-      "UG",
-      "CD",
-      "RW",
-      "BI",
-      "MZ"
-    ]
+    "countries_iso2": ["TZ", "KE", "UG", "CD"]
   },
   {
     "name": "Marathi",
     "iso_code": "mr",
     "total_speakers_millions": 99,
     "percent_world_population": 1.2,
-    "countries_iso2": [
-      "IN"
-    ]
+    "countries_iso2": ["IN"]
   },
   {
     "name": "Telugu",
     "iso_code": "te",
     "total_speakers_millions": 96,
     "percent_world_population": 1.2,
-    "countries_iso2": [
-      "IN"
-    ]
+    "countries_iso2": ["IN"]
   },
   {
     "name": "Turkish",
     "iso_code": "tr",
     "total_speakers_millions": 88,
     "percent_world_population": 1.1,
-    "countries_iso2": [
-      "TR",
-      "CY",
-      "AZ"
-    ]
-  },
-  {
-    "name": "Korean",
-    "iso_code": "ko",
-    "total_speakers_millions": 82,
-    "percent_world_population": 1.0,
-    "countries_iso2": [
-      "KR",
-      "KP"
-    ]
+    "countries_iso2": ["TR", "CY", "DE"]
   },
   {
     "name": "Tamil",
     "iso_code": "ta",
     "total_speakers_millions": 86,
     "percent_world_population": 1.1,
-    "countries_iso2": [
-      "IN",
-      "LK",
-      "SG",
-      "MY"
-    ]
+    "countries_iso2": ["IN", "LK", "SG"]
   },
   {
-    "name": "Vietnamese",
-    "iso_code": "vi",
-    "total_speakers_millions": 85,
-    "percent_world_population": 1.0,
-    "countries_iso2": [
-      "VN"
-    ]
-  },
-  {
-    "name": "Italian",
-    "iso_code": "it",
-    "total_speakers_millions": 67,
-    "percent_world_population": 0.8,
-    "countries_iso2": [
-      "IT",
-      "SM",
-      "VA",
-      "CH"
-    ]
-  },
-  {
-    "name": "Persian (Farsi)",
-    "iso_code": "fa",
-    "total_speakers_millions": 130,
-    "percent_world_population": 1.6,
-    "countries_iso2": [
-      "IR",
-      "AF",
-      "TJ"
-    ]
-  },
-  {
-    "name": "Filipino (Tagalog)",
-    "iso_code": "fil",
-    "total_speakers_millions": 82,
-    "percent_world_population": 1.0,
-    "countries_iso2": [
-      "PH"
-    ]
-  },
-  {
-    "name": "Javanese",
-    "iso_code": "jv",
-    "total_speakers_millions": 82,
-    "percent_world_population": 1.0,
-    "countries_iso2": [
-      "ID"
-    ]
-  },
-  {
-    "name": "Punjabi",
-    "iso_code": "pa",
-    "total_speakers_millions": 148,
-    "percent_world_population": 1.8,
-    "countries_iso2": [
-      "IN",
-      "PK"
-    ]
+    "name": "Western Punjabi",
+    "iso_code": "pnb",
+    "total_speakers_millions": 93,
+    "percent_world_population": 1.1,
+    "countries_iso2": ["PK", "IN"]
   },
   {
     "name": "Wu Chinese",
     "iso_code": "wuu",
     "total_speakers_millions": 81,
     "percent_world_population": 1.0,
-    "countries_iso2": [
-      "CN"
-    ]
+    "countries_iso2": ["CN"]
   },
   {
-    "name": "Malay",
-    "iso_code": "ms",
-    "total_speakers_millions": 77,
-    "percent_world_population": 0.9,
-    "countries_iso2": [
-      "MY",
-      "SG",
-      "BN"
-    ]
+    "name": "Vietnamese",
+    "iso_code": "vi",
+    "total_speakers_millions": 95,
+    "percent_world_population": 1.2,
+    "countries_iso2": ["VN", "US"]
   },
   {
-    "name": "Thai",
-    "iso_code": "th",
-    "total_speakers_millions": 77,
-    "percent_world_population": 0.9,
-    "countries_iso2": [
-      "TH"
-    ]
+    "name": "Korean",
+    "iso_code": "ko",
+    "total_speakers_millions": 82,
+    "percent_world_population": 1.0,
+    "countries_iso2": ["KR", "KP"]
+  },
+  {
+    "name": "Italian",
+    "iso_code": "it",
+    "total_speakers_millions": 67,
+    "percent_world_population": 0.8,
+    "countries_iso2": ["IT", "CH"]
+  },
+  {
+    "name": "Persian",
+    "iso_code": "fa",
+    "total_speakers_millions": 82,
+    "percent_world_population": 1.0,
+    "countries_iso2": ["IR", "AF"]
+  },
+  {
+    "name": "Filipino",
+    "iso_code": "fil",
+    "total_speakers_millions": 82,
+    "percent_world_population": 1.0,
+    "countries_iso2": ["PH", "US"]
   }
 ]
