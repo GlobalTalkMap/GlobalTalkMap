@@ -1,41 +1,33 @@
 # Global Talk Map
 
-A single-page visualization that lets you pick the languages you speak and instantly see:
+A lightweight, single-page visualization that helps estimate how many people you can potentially talk to based on the languages you speak. Pick languages, and the site highlights countries, draws a pie chart of the selected languages, and summarizes the approximate population reach.
 
-- Which countries around the world have large communities of those languages.
-- How the total population of those languages splits across the world (pie chart).
-- A naive, high-level estimate of how many people you could probably talk to.
+## Live/hosting instructions
+All files live at the repository root, so you can enable GitHub Pages via **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `main` → Folder: `/ (root)`**. The published site will then be available at `https://<username>.github.io/<repo>/`.
 
-The project is front-end only (vanilla HTML/CSS/JS), so it can be hosted directly on GitHub Pages.
+To preview locally without GitHub Pages, use any static HTTP server (for example `python -m http.server` from the project root) and open `http://localhost:8000`.
 
-## Data sources
+## Tech stack
+- Plain HTML, CSS, and JavaScript (no build step).
+- [D3.js](https://d3js.org/) for drawing the simplified world map.
+- [Chart.js](https://www.chartjs.org/) for the responsive pie chart.
 
-- Approximate (L1 + L2) speaker counts are based on the [Wikipedia list of languages by total number of speakers](https://en.wikipedia.org/wiki/List_of_languages_by_total_number_of_speakers) and other language-specific Wikipedia pages.
-- Country associations (where a language is official or widely used) follow Wikipedia country/language lists and public statistics.
-- `data/world.geojson` is a simplified, hand-crafted GeoJSON where each feature is a rectangular proxy for a country's approximate location. It is designed to keep the repository lightweight while still supporting country-level highlighting.
+## Data
+- `data/languages.json` contains approximate total speakers for the top 25 global languages, drawing on Wikipedia's *List of languages by total number of speakers* (L1 + L2). Each language also lists a small set of representative ISO-3166 alpha-2 country codes where it is official or widely spoken.
+- `data/world.geojson` is a simplified custom GeoJSON containing bounding-box polygons for the countries referenced in the language dataset. It is intentionally lightweight so it can be served statically; highlighted shapes are approximate, not authoritative boundaries.
+- All population percentage calculations assume an approximate world population of 8.1 billion people (2023).
 
-All values are approximate and for educational visualization only.
+## Features
+- Searchable multi-select list of languages showing the number of total speakers in billions.
+- World map that highlights the union of countries tied to the selected languages and shows hover tooltips listing which languages apply.
+- Pie chart visualizing the share of the selected languages' speaker totals.
+- Textual summary showing the naive total number of people you could potentially talk to (in billions) and what percentage of the global population that represents.
+- Prominent disclaimers that overlapping multilingual speakers mean the total is an overestimate and the figures are approximate.
 
-## Running locally
+## Data & methodology notes
+- Speaker totals combine native and second-language speakers; the site simply sums these totals and therefore overestimates how many *unique* people you can reach.
+- Country highlighting is based on whether the selected language list includes that ISO code. This is a qualitative view of where a language is official or widely used, not an exact distribution of speakers.
+- Because the GeoJSON uses bounding boxes, country outlines are schematic. The goal is to provide geographic context suitable for a fast-loading static page.
 
-You can open `index.html` directly in a modern browser. For local development with live reloads, you can also use any static file server. Example using Python:
-
-```bash
-python -m http.server 8000
-```
-
-Then visit `http://localhost:8000` in your browser.
-
-## Deploying on GitHub Pages
-
-1. Commit everything to the `main` branch of your repository.
-2. In the GitHub repo, go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Branch: main** and **Folder: / (root)**.
-4. Click **Save**. GitHub Pages will build the site from the repository root and give you a public URL.
-5. If you ever notice that GitHub Pages keeps serving an older cached version of the CSS/JS, bump the `ASSET_VERSION` constant in `script.js` and update the `?v=` query strings in `index.html`. That forces browsers/CDNs to fetch the latest assets.
-
-## Customization tips
-
-- Add or adjust languages by editing `data/languages.json`. Keep totals in millions for consistency.
-- Update `data/world.geojson` if you want more detailed shapes. Any standard GeoJSON world map should work.
-- `script.js` contains explanatory comments and is organized into small helper functions so you can swap out the map or charting library if needed.
+## Development
+No build tools are required. Update the JSON data to refresh numbers or add languages/countries, and tweak `script.js` if you need to change how the visualization behaves.
