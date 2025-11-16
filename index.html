@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Talk Map</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="content">
+      <h1>How many people can you talk to?</h1>
+      <p>Pick the languages you speak and see a quick, approximate view of how much of the world you could chat with. Totals are based on public statistics and intentionally overestimate reach because many people speak multiple languages.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel language-panel">
+      <div class="panel-header">
+        <h2>Languages</h2>
+        <p>Select one or more languages you speak fluently.</p>
+      </div>
+      <p class="hint">Check or uncheck languages below. The visuals update instantly—no need to press Enter.</p>
+      <label class="sr-only" for="languageSearch">Search languages</label>
+      <input id="languageSearch" type="text" placeholder="Search languages" autocomplete="off">
+      <div class="selector-actions">
+        <button id="selectAll" type="button">Select all</button>
+        <button id="clearSelection" type="button" class="secondary">Clear</button>
+      </div>
+      <div id="languageList" class="language-list" aria-live="polite">
+        <p class="empty-state">Loading languages…</p>
+      </div>
+    </section>
+
+    <section class="panel map-panel">
+      <div class="panel-header">
+        <h2>World map</h2>
+        <p>Highlighted countries have substantial native speakers of at least one selected language.</p>
+      </div>
+      <div id="map" role="img" aria-label="Simplified world map"></div>
+      <p class="legend">Hover over a country to see which of your selected languages are common there.</p>
+    </section>
+
+    <section class="panel insights-panel">
+      <div class="panel-header">
+        <h2>Population insights</h2>
+        <p>Breakdown of total (L1 + L2) speakers for the languages you picked.</p>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="populationChart" aria-label="Pie chart showing speaker distribution"></canvas>
+        <div id="chartPlaceholder" class="chart-placeholder">Pick at least one language to see the chart.</div>
+      </div>
+      <div id="summary" class="summary" aria-live="polite"></div>
+      <p class="note">Numbers come from publicly available sources (mainly Wikipedia) and are rounded. "People you can talk to" simply sums language populations, so bilingual people are counted more than once.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="content">
+      <p>Built as a lightweight static visualization. Data sources: Wikipedia lists of languages by total speakers and official languages by country.</p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">This experience needs JavaScript enabled to load the interactive map and chart.</p>
+  </noscript>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
